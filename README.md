@@ -1,10 +1,12 @@
-# Snorlax
+![Snorlax package](https://i.imgur.com/nTeJX9E.jpg)
 
-Snorlax is my first ever python library, which I plan to publish to open-source python package repository: `pypi.org`
+# Snorlax
 
 The concept is to have a personal toolbar that contains all the handy functions that support efficient python software engineering workflows, connectivity to cloud, navigating file systems, parsing date/time formats and pushing notifications to different platforms.
 
 `Step-by-step we'll build this, welcome any contributions`
+
+---
 
 ## Installation
 #### ❗ Currently unavailable
