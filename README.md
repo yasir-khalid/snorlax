@@ -1,4 +1,3 @@
-
 # Snorlax
 
 Snorlax is my first ever python library, which I plan to publish to open-source python package repository: `pypi.org`

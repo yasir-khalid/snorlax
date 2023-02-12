@@ -1,0 +1,19 @@
+.vscode/
+__pycache__
+venv
+snorlax/.DS_Store
+
+# iPython Notebook files
+.ipynb_checkpoints/
+*.ipynb
+
+# ignore credentials files/or environment variables
+credentials
+*.txt
+*.logs
+
+# dotenv-vault credentials to store environment variables securely
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
