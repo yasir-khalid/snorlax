@@ -9,7 +9,6 @@ The concept is to have a personal toolbar that contains all the handy functions 
 ---
 
 ## Installation
-#### ❗ Currently unavailable
 To run the code successfully, all the dependencies can either be installed using **pip**:
 
 ```bash
