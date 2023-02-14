@@ -38,3 +38,6 @@ vault-setup:
 
 vault-login:
 	@npx dotenv-vault login -y
+
+upload-package:
+	@python -m twine upload dist/* --skip-existing -p $(PYPI_PASSWORD) -u $(PYPI_USERNAME)

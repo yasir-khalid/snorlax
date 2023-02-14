@@ -4,15 +4,17 @@ install_requires = open("requirements.txt").read().strip().split("\n")
 
 setup(
     # Package metadata
-    name="snorlax",
-    version="0.0.1"
+    name="whykay",
+    version="0.0.3",
     description="Python toolstack for helper functions and efficient connectivity",
     author="Yasir Khalid",
     author_email="yasir_khalid@outlook.com",
     # project_urls={
     #     "Documentation": ""
     # },
-    long_description=open("README.md").read(),
+    url="https://github.com/yasir-khalid/whykay",
+    long_description=open("README.md", encoding="utf-8").read(),
+    long_description_content_type="text/markdown",
     # Package setup
     packages=find_packages(where="src"),
     package_dir={"": "src"},
@@ -33,4 +35,6 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Topic :: Software Development :: Libraries",
     ],
+
+    download_url="https://github.com/yasir-khalid/whykay",
 )
