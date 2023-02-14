@@ -1,4 +1,11 @@
-![WhyKay package](https://i.imgur.com/PlJOs7M.jpg)
+<p align="center"><img src="https://i.imgur.com/UjLoOG3.jpg" width=1000></p>
+
+<p align="center">
+    <a href="https://pypi.python.org/pypi/prefect/" alt="PyPI version">
+        <img alt="PyPI" src="https://img.shields.io/pypi/v/prefect?color=0052FF&labelColor=090422"></a>
+    <a href="https://github.com/prefecthq/prefect/pulse" alt="Activity">
+        <img src="https://img.shields.io/github/commit-activity/m/prefecthq/prefect?color=0052FF&labelColor=090422" /></a>
+</p>
 
 # WhyKay
 
