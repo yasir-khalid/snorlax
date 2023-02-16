@@ -39,5 +39,10 @@ vault-setup:
 vault-login:
 	@npx dotenv-vault login -y
 
+build-package:
+	@python setup.py sdist
+
 upload-package:
-	@python -m twine upload dist/* --skip-existing -p $(PYPI_PASSWORD) -u $(PYPI_USERNAME)
+	@echo "Pushing to PyPi will only be possible if you have the right PYPI_TOKEN passed as an environment variable"
+	@pwd
+	@python -m twine upload dist/* --skip-existing -p $PYPI_PASSWORD -u $PYPI_USERNAME
