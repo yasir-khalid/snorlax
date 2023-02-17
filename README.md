@@ -1,17 +1,12 @@
 <p align="center"><img src="https://i.imgur.com/UjLoOG3.jpg" width=1000></p>
 
-<p align="center">
-    <a href="https://pypi.python.org/pypi/whykay/" alt="PyPI version">
-        <img alt="PyPI" src="https://img.shields.io/pypi/v/whykay?color=0052FF&labelColor=090422"></a>
-    <a href="https://github.com/prefecthq/prefect/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/m/yasir-khalid/whykay?color=0052FF&labelColor=090422" /></a>
-</p>
-
 # WhyKay
+
+[![PyPI][pypi_badge]][pypi_link] [![GitHub][github_badge]][github_link] [![commit-activity][pulse_badge]][pulse_link] 
 
 The concept is to have a personal toolbar that contains all the handy functions that support efficient python software engineering workflows, connectivity to cloud, navigating file systems, parsing date/time formats and pushing notifications to different platforms.
 
-`v0.1.0 is now available with the feature to calculate the stock exposure through your ETFs and stock portfolio`
+🚩 v0.1.0 is now available with the feature to calculate the stock exposure through your ETFs and stock portfolio
 
 ---
 
@@ -84,3 +79,12 @@ v0.0.x
 ## Authors
 
 - [Yasir Khalid](www.linkedin.com/in/yasir-khalid)
+
+[github_badge]: https://badgen.net/badge/icon/GitHub?icon=github&color=black&label
+[github_link]: https://github.com/yasir-khalid/whykay
+
+[pypi_badge]: https://badgen.net/pypi/v/whykay?icon=pypi&color=0052FF&labelColor=090422
+[pypi_link]: https://www.pypi.org/project/whykay/
+
+[pulse_badge]: https://img.shields.io/github/commit-activity/m/yasir-khalid/whykay?color=0052FF&labelColor=090422
+[pulse_link]: https://github.com/yasir-khalid/whykay/pulse
