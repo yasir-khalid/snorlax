@@ -41,9 +41,9 @@ make setup
 
 ```python
 >>> from whykay.investments.portfolio_analyzer import calculate_exposure
-╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-║                                               WhyKay import successful                                               ║
-╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+╔═════=══════════════════════════════════════════════════════════════════════════════════╗
+║                           WhyKay import successful                                     ║
+╚════════════════════════════════════════════════════════════════════════════════════════╝
 Launching Portfolio Analyzer
 
  1 This only works on ETFs or Stocks (Individual shares) based portfolio
@@ -66,6 +66,20 @@ Launching Portfolio Analyzer
 |  9 | JPM      |                6.5000 |             0.9286 |
 +----+----------+-----------------------+--------------------+
 ```
+
+## Changelog
+
+v0.2.0
+- fixes to `.gitignore` file which was preventing the requirements.txt file upload
+- does not break functionality changes in v0.1.0
+
+v0.1.0
+- Minor release that supports the stock exposure feature calculator
+- `from whykay.investments.portfolio_analyzer import calculate_exposure` 
+
+v0.0.x
+- previous versions were experimental and don't provide much functionality
+- will be discarded on `pypi.org`
 
 ## Authors
 
