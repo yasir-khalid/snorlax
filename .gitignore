@@ -5,6 +5,7 @@ snorlax/.DS_Store
 *.egg-info
 dist/
 build/
+debugging/
 
 # iPython Notebook files
 .ipynb_checkpoints/
@@ -12,7 +13,6 @@ build/
 
 # ignore credentials files/or environment variables
 credentials
-*.txt
 *.logs
 
 # dotenv-vault credentials to store environment variables securely
