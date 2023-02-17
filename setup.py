@@ -5,7 +5,7 @@ install_requires = open("requirements.txt").read().strip().split("\n")
 setup(
     # Package metadata
     name="whykay",
-    version="0.1.0",
+    version="0.2.0",
     description="Python toolstack for helper functions and efficient connectivity",
     author="Yasir Khalid",
     author_email="yasir_khalid@outlook.com",
