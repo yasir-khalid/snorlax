@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/UjLoOG3.jpg" width=1000></p>
+<p align="center"><img src="https://i.imgur.com/gPf0GQF.jpg" width=1000></p>
 
 # WhyKay
 
@@ -35,23 +35,30 @@ make setup
 *Available for use from v0.1.0*
 
 #### Limitations (in-scope features)
- 1 This only works on ETFs or Stocks (Individual shares) based portfolio
- 2 Will ignore any other investment holdings that you pass
- 3 It takes in input in form of a {ISIN: AMOUNT INVESTED, ...} where ISIN uniquely idenfies a holding
- 4. Returns the output in a JSON format 
+- This only works on ETFs or Stocks (Individual shares) based portfolio
+- Will ignore any other investment holdings that you pass
+- It takes in input in form of a JSON structure:
+    ```bash
+    {
+        "ISIN number": Investment Value, 
+        "ISIN number": Investment Value, 
+        "ISIN number": Investment Value
+    }
+    
+    ```
+    where ISIN uniquely idenfies a holding, can get it from **Yahoo Finance**
+- Returns the output in a JSON format 
 
 ```python
 >>> from whykay.investments.holdings_analyzer import calculate_exposure
 ╔═══════════════════════════════════════════════════════════════════════════════╗
 ║                          WhyKay import successful                             ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
-Launching Portfolio Analyzer
-
-
 >>> calculate_exposure(
-        {"IE00B3XXRP09": 500, "US0378331005": 200},
+        holdings = {"IE00B3XXRP09": 500, "US0378331005": 200},
         display = True
     )
+    
 +----+----------+-----------------------+--------------------+
 |    | symbol   |   Amount Invested ($) |   Overall Exposure |
 |----+----------+-----------------------+--------------------|
@@ -91,11 +98,11 @@ v0.0.x
 
 - [Yasir Khalid](www.linkedin.com/in/yasir-khalid)
 
-[github_badge]: https://badgen.net/badge/icon/GitHub?icon=github&color=black&label
+[github_badge]: https://badgen.net/badge/icon/GitHub?icon=github&color=47b778&label
 [github_link]: https://github.com/yasir-khalid/whykay
 
-[pypi_badge]: https://badgen.net/pypi/v/whykay?icon=pypi&color=0052FF&labelColor=090422
+[pypi_badge]: https://badgen.net/pypi/v/whykay?icon=pypi&color=47b778&labelColor=090422
 [pypi_link]: https://www.pypi.org/project/whykay/
 
-[pulse_badge]: https://img.shields.io/github/commit-activity/m/yasir-khalid/whykay?color=0052FF&labelColor=090422
+[pulse_badge]: https://img.shields.io/github/commit-activity/m/yasir-khalid/whykay?color=47b778&labelColor=090422
 [pulse_link]: https://github.com/yasir-khalid/whykay/pulse
