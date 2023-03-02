@@ -6,7 +6,7 @@
 
 The concept is to have a personal toolbar that contains all the handy functions that support efficient python software engineering workflows, connectivity to cloud, navigating file systems, parsing date/time formats and pushing notifications to different platforms.
 
-🚩 v0.1.0 is now available with the feature to calculate the stock exposure through your ETFs and stock portfolio
+🚩 v0.3.0 is now available with the feature to calculate the stock exposure through your ETFs and stock portfolio
 
 ---
 
@@ -31,21 +31,27 @@ make setup
 
 ## Features (Usage/Examples)
 
-### Investments (Stock exposure calculator)
+### Investments (Stock/ETF exposure calculator)
 *Available for use from v0.1.0*
 
-```python
->>> from whykay.investments.portfolio_analyzer import calculate_exposure
-╔═════=══════════════════════════════════════════════════════════════════════════════════╗
-║                           WhyKay import successful                                     ║
-╚════════════════════════════════════════════════════════════════════════════════════════╝
-Launching Portfolio Analyzer
-
+#### Limitations (in-scope features)
  1 This only works on ETFs or Stocks (Individual shares) based portfolio
  2 Will ignore any other investment holdings that you pass
  3 It takes in input in form of a {ISIN: AMOUNT INVESTED, ...} where ISIN uniquely idenfies a holding
+ 4. Returns the output in a JSON format 
 
->>> calculate_exposure({"IE00B3XXRP09": 500, "US0378331005": 200})
+```python
+>>> from whykay.investments.holdings_analyzer import calculate_exposure
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                          WhyKay import successful                             ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+Launching Portfolio Analyzer
+
+
+>>> calculate_exposure(
+        {"IE00B3XXRP09": 500, "US0378331005": 200},
+        display = True
+    )
 +----+----------+-----------------------+--------------------+
 |    | symbol   |   Amount Invested ($) |   Overall Exposure |
 |----+----------+-----------------------+--------------------|
@@ -63,6 +69,11 @@ Launching Portfolio Analyzer
 ```
 
 ## Changelog
+
+v0.3.0
+- Breaks previous functionality, as output is now typically returned in a json structure
+- Import changes from `whykay.investments.stock_analyzer` to `whykay.investments.holdings_analyzer`
+- Takes in new parameter: `display` which returns the tabular display of results on screen
 
 v0.2.0
 - fixes to `.gitignore` file which was preventing the requirements.txt file upload
