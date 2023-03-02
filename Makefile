@@ -20,8 +20,8 @@ run: setup
 	@python main.py
 
 format:
-	@isort *.py
-	@black *.py
+	@isort src/whykay *.py
+	@black src/whykay *.py
 
 vault-push:
 	@npx dotenv-vault push
