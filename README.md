@@ -50,10 +50,10 @@ make setup
 - Returns the output in a JSON format 
 
 ```python
->>> from whykay.investments.holdings_analyzer import calculate_exposure
-╔═══════════════════════════════════════════════════════════════════════════════╗
-║                          WhyKay import successful                             ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
+>>> from whykay.investments.stocks_analyzer import calculate_exposure
+╔══════════════════════════════════════════════════════════════════════════╗
+║                     Investment Analyzer Imported                         ║
+╚══════════════════════════════════════════════════════════════════════════╝
 >>> calculate_exposure(
         holdings = {"IE00B3XXRP09": 500, "US0378331005": 200},
         display = True
