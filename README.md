@@ -6,7 +6,7 @@
 
 The concept is to have a personal toolbar that contains all the handy functions that support efficient python software engineering workflows, connectivity to cloud, navigating file systems, parsing date/time formats and pushing notifications to different platforms.
 
-🚩 v0.3.0 is now available with the feature to calculate the stock exposure through your ETFs and stock portfolio
+🚩 v0.4.0 is now available with the feature to calculate the stock exposure through your ETFs and stock portfolio
 
 ---
 
@@ -39,14 +39,21 @@ make setup
 - Will ignore any other investment holdings that you pass
 - It takes in input in form of a JSON structure:
     ```bash
-    {
-        "ISIN number": Investment Value, 
-        "ISIN number": Investment Value, 
-        "ISIN number": Investment Value
-    }
+    [
+        {
+            "isin": "US30303M1027",
+            "investment":  185.22,
+            "category": "stock" # Optional field
+        },
+        {
+            "isin": "IE00BQQP9H09",
+            "investment":  298.22,
+            "category": "ETF" # Optional field
+        }
+    ]
     
     ```
-    where ISIN uniquely idenfies a holding, can get it from **Yahoo Finance**
+    where `isin` uniquely idenfies a holding, can get it from **Yahoo Finance**/**Trading 212** (personal choice)
 - Returns the output in a JSON format 
 
 ```python
@@ -54,9 +61,18 @@ make setup
 ╔══════════════════════════════════════════════════════════════════════════╗
 ║                     Investment Analyzer Imported                         ║
 ╚══════════════════════════════════════════════════════════════════════════╝
+>>> data = [
+                {
+                    "isin": "US30303M1027",
+                    "investment":  185.22
+                },
+                {
+                    "isin": "IE00BQQP9H09",
+                    "investment":  298.22
+                }
+            ]
 >>> calculate_exposure(
-        holdings = {"IE00B3XXRP09": 500, "US0378331005": 200},
-        display = True
+        holdings = data, display = True
     )
     
 +----+----------+-----------------------+--------------------+
@@ -76,6 +92,12 @@ make setup
 ```
 
 ## Changelog
+
+v0.4.0
+- Breaks previous functionality, as output is now typically returned in a json structure
+- Import reverted back to `whykay.investments.stock_analyzer` for future use cases
+- Takes in new parameter: `display` which returns the tabular display of results on screen
+- data is now inputted in form of API convention JSON structures for API endpoint developments
 
 v0.3.0
 - Breaks previous functionality, as output is now typically returned in a json structure
