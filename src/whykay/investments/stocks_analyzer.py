@@ -7,7 +7,7 @@ from tabulate import tabulate
 from yahoo_fin import stock_info as si
 
 from whykay.helpers.logs import init_logger
-from whykay.investments.models.data_models import Portfolio
+from whykay.investments.models.data_models import Portfolio, WeightedInvestments
 from whykay.investments.models.validation import input_validator
 import json
 from typing import Dict, List
@@ -24,17 +24,17 @@ def parse_holdings_input(list_of_holdings: List[Portfolio]) -> pd.DataFrame:
         # get the holdings data for the current ETF
         try:
             ticker = yf.Ticker(holding.isin)
-            logging.info(f"{ticker} for {holding.isin} found on Yahoo Finance")
+            logging.info(f"Ticker metadata: {ticker} for {holding.isin} found on Yahoo Finance")
             ticker_data = ticker.info
             logging.info(f"{holding.isin} information successfully extracted from Yahoo Finance")
         except:
-            logging.error(f"Cannot extract data from Yahoo Finance for {holding.isin}")
+            logging.error(f"Cannot extract detailed information from Yahoo Finance for {holding.isin}")
             continue
 
         legalType = ticker_data.get("legalType", "undefined")
 
         if legalType == "Exchange Traded Fund":
-            logging.info(f"{holding.isin} is ISIN for ETF: {ticker_data['longName']}")
+            logging.info(f"{holding.isin} is ISIN for ETF: {ticker_data.get('longName', '<Name not specified on Yahoo finance>')}")
             holdings_data = pd.DataFrame.from_records(ticker_data["holdings"])
 
             # add the holdings and weights to the combined dataframe, using the investment amount as a weight
@@ -43,13 +43,13 @@ def parse_holdings_input(list_of_holdings: List[Portfolio]) -> pd.DataFrame:
             )
         else:
             logging.warning(
-                f"{holding.isin} is not an ETF, belongs to other legal types. Name: {ticker_data['longName']}"
+                f"{holding.isin} is not an ETF, {ticker_data.get('longName', '<Name not specified on Yahoo finance>')} belongs to other legal types"
             )
             if "holdings" in ticker_data.keys():
                 logging.warning(
                     f"Unsupported ISIN {holding.isin}, potentially belong to bond market/REITs etc"
                 )
-                pass
+                continue
             else:
                 logging.info(
                     f"ISIN {holding.isin} correponds to an individual equity share. Incorporting into analysis"
@@ -86,7 +86,13 @@ def retouching_outputs_for_display(final_output: pd.DataFrame) -> pd.DataFrame:
 def calculate_exposure(holdings):
     """calculates stock/ETF exposure against individual holdings data from Yahoo Finance"""
     validated_data: Portfolio = input_validator(data = holdings)
-    weighted_holdings: pd.DataFrame = parse_holdings_input(list_of_holdings= validated_data)
+    weighted_holdings: pd.DataFrame = parse_holdings_input(list_of_holdings = validated_data)
+
+    try:
+        _tmp = WeightedInvestments(**weighted_holdings)
+    except:
+        logging.error("Calculations couldn't be performed on provided investments, validate logs for debugging")
+        raise SystemExit
 
     ticker_names: pd.DataFrame = weighted_holdings[["symbol"]].drop_duplicates()
     stock_exposure: pd.DataFrame = pd.DataFrame(
