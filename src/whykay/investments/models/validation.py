@@ -1,8 +1,10 @@
-from typing import List, Dict
-from whykay.investments.models.data_models import Portfolio
+from typing import Dict, List
+
 from whykay.helpers.logs import init_logger
+from whykay.investments.models.data_models import Portfolio
 
 logging = init_logger(name=__name__)
+
 
 def input_validator(data: list[Dict]) -> Portfolio:
     """compares the input data against the defined pydantic model for input"""

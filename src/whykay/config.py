@@ -2,7 +2,7 @@
 import logging
 
 # General Config
-PACKAGE = 'WHYKAY'
+PACKAGE = "WHYKAY"
 
 # Logger configuration
-LOG_LEVEL = logging.INFO
+LOG_LEVEL = logging.WARNING

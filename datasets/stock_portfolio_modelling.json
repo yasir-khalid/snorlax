@@ -1,27 +1,14 @@
 [
     {
         "isin": "US30303M1027",
-        "investment":  185.22,
-        "category": "stock"
-    },
-    {
-        "isin": "IE00BQQP9H09",
-        "investment": 48.51,
-        "category": "ETF"
-    },
-    {
-        "isin": "IE00B3VVMM84",
-        "investment": 45.93,
-        "category": "ETF"
-    },
-    {
-        "isin": "IE00BFMXXD54",
-        "investment": 62.369,
+        "ticker": "VOO",
+        "investment":  500,
         "category": "ETF"
     },
     {
         "isin": "IE00B5BMR087",
-        "investment": 416.5,
-        "category": "ETF"
+        "ticker": "AAPL",
+        "investment": 200,
+        "category": "stock"
     }
 ]
