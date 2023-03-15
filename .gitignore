@@ -1,4 +1,5 @@
 .vscode/
+*.cache
 __pycache__
 venv
 snorlax/.DS_Store
@@ -6,6 +7,7 @@ snorlax/.DS_Store
 dist/
 build/
 debugging/
+webapp/
 
 # iPython Notebook files
 .ipynb_checkpoints/

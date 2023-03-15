@@ -9,8 +9,7 @@ health:
 
 freeze:
 	@pip install pipreqs
-	@pipreqs . --force
-	@conda env export > environment.yml
+	@pipreqs src/whykay --savepath "requirements.txt" --force
 
 setup: health
 	@pip install -r requirements.txt

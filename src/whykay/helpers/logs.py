@@ -1,6 +1,12 @@
 import logging
 import sys
+<<<<<<< HEAD
+
+from whykay.config import LOG_LEVEL
+
+=======
 from whykay.config import *
+>>>>>>> a49278411eaa38fce3d57fb54577e9b3d996108e
 
 def init_logger(name):
     console_formatter = logging.Formatter(
