@@ -81,7 +81,6 @@ def parse_holdings_input(list_of_holdings: List[Portfolio]) -> pd.DataFrame:
 
     return weighted_holdings
 
-
 def retouching_outputs_for_display(final_output: pd.DataFrame) -> pd.DataFrame:
     analysis: pd.DataFrame = final_output.sort_values(
         by="Overall Exposure", ascending=False
@@ -154,4 +153,4 @@ if __name__ == "__main__":
     except:
         logging.error("Sample data read unsuccessful. Check path")
 
-    calculate_exposure(holdings=sample_holdings_data)
+    calculate_exposure(holdings=sample_holdings_data, display=True)
