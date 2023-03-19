@@ -7,15 +7,15 @@ snorlax/.DS_Store
 dist/
 build/
 debugging/
-webapp/
 
 # iPython Notebook files
 .ipynb_checkpoints/
 *.ipynb
 
 # ignore credentials files/or environment variables
-credentials
+credentials/
 *.logs
+.streamlit/
 
 # dotenv-vault credentials to store environment variables securely
 .env*
