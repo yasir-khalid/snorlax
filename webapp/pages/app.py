@@ -1,11 +1,8 @@
 #---PIP PACKAGES---#
 import streamlit as st
-from streamlit_option_menu import option_menu
-from isoweek import Week
 
 from utils import get_holdings_metadata
 #---BUILT-IN PYTHON MODULES
-from pprint import pprint
 from streamlit_echarts import st_echarts
 
 import itertools
