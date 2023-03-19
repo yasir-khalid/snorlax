@@ -148,7 +148,7 @@ def calculate_stock_exposure():
     stock_exposure: pd.DataFrame = pd.DataFrame(
         assets_weights.groupby("symbol")["weighted_investment_amount"].sum()
     )
-    total_portfolio_invstments = db.get_portfolio_total()
+    total_portfolio_invstments = db.get_portfolio_total(st.session_state['uuid'])
     stock_exposure[
         "net_exposure"
     ]: pd.DataFrame = stock_exposure["weighted_investment_amount"] * 100 / total_portfolio_invstments
