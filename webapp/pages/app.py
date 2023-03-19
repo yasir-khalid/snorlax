@@ -16,7 +16,7 @@ from streamlit_extras.switch_page_button import switch_page
 
 # Checking user login; else redirecting to login page
 if 'uuid' not in st.session_state:
-    switch_page("hello")
+    switch_page("login")
 
 # Page specific settings: title/description/icons etc 
 page_title = "Portfolio Exposure Calculator"
@@ -26,8 +26,8 @@ st.title(f"{page_title}")
 
 st.subheader('This webapp helps estimate your portfolio exposure towards different sectors and stocks')
 st.markdown("""
-    ##### Supported by data from `Yahoo Finance`
-    Reach out to **Yasir Khalid** for more questions: [![Linkedin](https://badgen.net/badge/icon/Linkedin?icon=linkedin&label)](https://linkedin.com/in/yasir-khalid)"""
+    ##### Supported by data from `Yahoo Finance` and library: `WhyKay`
+    """
     )
 
 st.info(f'Logged in as: **{st.session_state["uuid"]}**')
@@ -187,5 +187,7 @@ if 'run_analysis_button' in st.session_state and st.session_state.run_analysis_b
         - Doesn't support any asset class beyond Equity (Stocks) and ETFs
         - ETF data provided by `Yahoo Finance` only gives information on top 10 holdings within the ETF
         - Might not support all ETF providers (not tested for all ETF providers like: JP Morgan, HSBC etc.)
+
+        Reach out to **Yasir Khalid** for more questions: [![Linkedin](https://badgen.net/badge/icon/Linkedin?icon=linkedin&label)](https://linkedin.com/in/yasir-khalid)
         """
         )
