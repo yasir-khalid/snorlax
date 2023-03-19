@@ -3,3 +3,6 @@ pydantic==1.10.5
 rich==13.3.2
 tabulate==0.8.10
 yahooquery==2.3.0
+streamlit_echarts
+streamlit_extras
+deta

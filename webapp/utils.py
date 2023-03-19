@@ -1,5 +1,4 @@
 import db
-from rich import print
 from yahooquery import Ticker
 import pandas as pd
 import streamlit as st
